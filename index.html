@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daan Sutra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://img.freepik.com/free-photo/investment-business-budget-credit-costs-concept_53876-13720.jpg?t=st=1731935828~exp=1731939428~hmac=c5a931edd9155f012ce8d8804a44f714677579b0ecfabf38fc03bc89d76cccef&w=900') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .qr-code {
+            height: 50px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+
+        .navbar-right .nav-link {
+            margin-left: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-right .nav-link:hover {
+            color: #00bcd4;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Modal Style */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            display: block;
+            margin: 15% auto;
+            max-width: 90%;
+        }
+
+        .modal img {
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #aaa;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" alt="Daan Sutra Logo" class="logo">
+            <img src="https://media.istockphoto.com/id/1357914233/vector/qr-code-scan-for-smartphone-qr-code-with-inscription-scan-me-with-smartphone-scan-me-icon.jpg?s=1024x1024&w=is&k=20&c=dHxyEx9bFTkdjZgJGdIVDgYNxS3XCqs4QdcV7gFjD6o=" alt="QR Code" class="qr-code" id="qrCode">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#invested">Invested</a></li>
+                    <li><a href="#members">Members</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <a href="#settings" class="nav-link">Settings</a>
+            <a href="#support" class="nav-link">Support</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to Daan Sutra</h1>
+            <p>Your platform for managing donations and investments effectively.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Daan Sutra. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="myModal" class="modal">
+        <span class="close" id="closeBtn">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and the modal content
+        var qrCode = document.getElementById("qrCode");
+        var modalImg = document.getElementById("img01");
+
+        // When the user clicks on the image, open the modal
+        qrCode.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = qrCode.src; // Set the clicked image as the modal content
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        var closeBtn = document.getElementById("closeBtn");
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal if clicked outside of the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
